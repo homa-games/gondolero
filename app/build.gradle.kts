@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.kotlinter)
 }
 
 android {
@@ -59,4 +60,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.ui.tooling.preview)
+}
+
+kotlinter {
+    reporters = arrayOf("plain")
+    ignoreFailures = false
 }
