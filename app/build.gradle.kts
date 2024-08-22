@@ -1,3 +1,5 @@
+import org.jmailen.gradle.kotlinter.support.ReporterType
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -63,6 +65,6 @@ dependencies {
 }
 
 kotlinter {
-    reporters = arrayOf("plain")
+    reporters = arrayOf(ReporterType.plain.name)
     ignoreFailures = false
 }
