@@ -68,3 +68,9 @@ kotlinter {
     reporters = arrayOf(ReporterType.plain.name)
     ignoreFailures = false
 }
+
+//buildscript {
+//    dependencies {
+//        classpath(libs.compose.rules)
+//    }
+//}
