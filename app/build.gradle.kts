@@ -1,6 +1,9 @@
+import org.jmailen.gradle.kotlinter.support.ReporterType
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.kotlinter)
 }
 
 android {
@@ -60,3 +63,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.ui.tooling.preview)
 }
+
+kotlinter {
+    reporters = arrayOf(ReporterType.plain.name)
+    ignoreFailures = false
+}
+
+//buildscript {
+//    dependencies {
+//        classpath(libs.compose.rules)
+//    }
+//}
