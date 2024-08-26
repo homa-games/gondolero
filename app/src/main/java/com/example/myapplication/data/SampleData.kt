@@ -6,7 +6,7 @@ object SampleData {
     val conversationSample = listOf(
         Message(
             "Lexi",
-            "Test...Test...Test..."
+            "Test...Test...Test...",
         ),
         Message(
             "Lexi",
@@ -19,55 +19,55 @@ object SampleData {
             |Android Pie (API 28)
             |Android 10 (API 29)
             |Android 11 (API 30)
-            |Android 12 (API 31)""".trim()
+            |Android 12 (API 31)""".trim(),
         ),
         Message(
             "Lexi",
             """I think Kotlin is my favorite programming language.
-            |It's so much fun!""".trim()
+            |It's so much fun!""".trim(),
         ),
         Message(
             "Lexi",
-            "Searching for alternatives to XML layouts..."
+            "Searching for alternatives to XML layouts...",
         ),
         Message(
             "Lexi",
             """Hey, take a look at Jetpack Compose, it's great!
             |It's the Android's modern toolkit for building native UI.
             |It simplifies and accelerates UI development on Android.
-            |Less code, powerful tools, and intuitive Kotlin APIs :)""".trim()
+            |Less code, powerful tools, and intuitive Kotlin APIs :)""".trim(),
         ),
         Message(
             "Lexi",
-            "It's available from API 21+ :)"
+            "It's available from API 21+ :)",
         ),
         Message(
             "Lexi",
-            "Writing Kotlin for UI seems so natural, Compose where have you been all my life?"
+            "Writing Kotlin for UI seems so natural, Compose where have you been all my life?",
         ),
         Message(
             "Lexi",
-            "Android Studio next version's name is Arctic Fox"
+            "Android Studio next version's name is Arctic Fox",
         ),
         Message(
             "Lexi",
-            "Android Studio Arctic Fox tooling for Compose is top notch ^_^"
+            "Android Studio Arctic Fox tooling for Compose is top notch ^_^",
         ),
         Message(
             "Lexi",
-            "I didn't know you can now run the emulator directly from Android Studio"
+            "I didn't know you can now run the emulator directly from Android Studio",
         ),
         Message(
             "Lexi",
-            "Compose Previews are great to check quickly how a composable layout looks like"
+            "Compose Previews are great to check quickly how a composable layout looks like",
         ),
         Message(
             "Lexi",
-            "Previews are also interactive after enabling the experimental setting"
+            "Previews are also interactive after enabling the experimental setting",
         ),
         Message(
             "Lexi",
-            "Have you tried writing build.gradle with KTS?"
+            "Have you tried writing build.gradle with KTS?",
         ),
     )
 }
