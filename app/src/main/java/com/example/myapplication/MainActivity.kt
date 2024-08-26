@@ -30,7 +30,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -45,7 +44,7 @@ class MainActivity : ComponentActivity() {
             MyApplicationTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     Conversation(messages = SampleData.conversationSample)
                 }
@@ -75,8 +74,8 @@ fun MessageCard(message: Message) {
                 .border(
                     width = 1.5.dp,
                     color = MaterialTheme.colorScheme.primary,
-                    shape = CircleShape
-                )
+                    shape = CircleShape,
+                ),
         )
         Spacer(modifier = Modifier.width(8.dp))
 
@@ -86,7 +85,7 @@ fun MessageCard(message: Message) {
                 MaterialTheme.colorScheme.primary
             } else {
                 MaterialTheme.colorScheme.surface
-            }
+            },
         )
 
         Column(modifier = Modifier.clickable { isExpanded = !isExpanded }) {
@@ -102,7 +101,7 @@ fun MessageCard(message: Message) {
                 color = surfaceColor,
                 modifier = Modifier
                     .animateContentSize()
-                    .padding(1.dp)
+                    .padding(1.dp),
             ) {
                 Text(
                     text = message.body,
@@ -118,7 +117,7 @@ fun MessageCard(message: Message) {
 @Preview(
     showBackground = true,
     name = "Light Mode",
-    )
+)
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     showBackground = true,
