@@ -65,7 +65,7 @@ dependencies {
 }
 
 ktlint {
-    version = libs.versions.ktlint.cli
+    version = libs.versions.ktlintCli
     enableExperimentalRules = false
     ignoreFailures = false
     reporters {
