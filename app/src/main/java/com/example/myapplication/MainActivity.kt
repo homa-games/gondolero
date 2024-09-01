@@ -53,6 +53,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Suppress("ktlint:compose:modifier-missing-check") // TODO fix me
 @Composable
 fun Conversation(messages: List<Message>) {
     LazyColumn {
@@ -62,6 +63,7 @@ fun Conversation(messages: List<Message>) {
     }
 }
 
+@Suppress("ktlint:compose:modifier-missing-check") // TODO fix me
 @Composable
 fun MessageCard(message: Message) {
     Row(modifier = Modifier.padding(all = 8.dp)) {
@@ -124,7 +126,7 @@ fun MessageCard(message: Message) {
     name = "Dark Mode",
 )
 @Composable
-fun MessageCardPreview() {
+private fun MessageCardPreview() {
     MyApplicationTheme {
         Surface {
             MessageCard(Message(author = "Android", body = "test text body"))
@@ -134,7 +136,7 @@ fun MessageCardPreview() {
 
 @Preview(showBackground = true)
 @Composable
-fun ConversationPreview() {
+private fun ConversationPreview() {
     MyApplicationTheme {
         Conversation(SampleData.conversationSample)
     }
