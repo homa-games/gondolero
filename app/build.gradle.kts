@@ -1,9 +1,9 @@
-import org.jmailen.gradle.kotlinter.support.ReporterType
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.kotlinter)
+    alias(libs.plugins.ktlintGradle)
 }
 
 android {
@@ -28,7 +28,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -53,7 +53,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -62,15 +61,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.ui.tooling)
+    ktlintRuleset(libs.compose.rules)
 }
 
-kotlinter {
-    reporters = arrayOf(ReporterType.plain.name)
+ktlint {
+    version = libs.versions.ktlint.cli
+    enableExperimentalRules = false
     ignoreFailures = false
+    reporters {
+        reporter(ReporterType.PLAIN_GROUP_BY_FILE)
+        reporter(ReporterType.HTML)
+    }
 }
-
-//buildscript {
-//    dependencies {
-//        classpath(libs.compose.rules)
-//    }
-//}
