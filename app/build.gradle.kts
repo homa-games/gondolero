@@ -53,7 +53,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -62,6 +61,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.ui.tooling.preview)
+    ktlintRuleset(libs.compose.rules)
 }
 
 ktlint {
