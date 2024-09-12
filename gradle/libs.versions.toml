@@ -1,6 +1,6 @@
 [versions]
 agp = "8.6.0"
-kotlin = "1.9.23"
+kotlin = "2.0.20"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -26,3 +26,4 @@ compose-rules = { group = "io.nlopez.compose.rules", name = "ktlint", version.re
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ktlintGradle = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintGradle" }
+kotlinCompose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
