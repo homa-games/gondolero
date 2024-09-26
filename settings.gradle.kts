@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "My Application"
 include(":app")
+include(":features:demo:api")
+include(":features:demo:impl")
