@@ -1,5 +1,9 @@
 [versions]
 compileSdk = "34"
+minSdk = "21"
+targetSdk = "34"
+buildToolsVersion = "34.0.0"
+kotlinCompilerExtensionVersion = "1.5.13"
 
 agp = "8.6.0"
 kotlin = "1.9.23"
