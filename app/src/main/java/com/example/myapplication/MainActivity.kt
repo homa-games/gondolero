@@ -35,6 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.data.Message
 import com.example.myapplication.data.SampleData
+import com.example.myapplication.demo.DemoImpl
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -46,7 +47,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    Conversation(messages = SampleData.conversationSample)
+                    Column {
+                        Demo(message = DemoImpl().demo())
+                        Conversation(messages = SampleData.conversationSample)
+                    }
                 }
             }
         }
@@ -116,6 +120,12 @@ fun MessageCard(message: Message) {
     }
 }
 
+@Suppress("ktlint:compose:modifier-missing-check") // TODO fix me
+@Composable
+fun Demo(message: String) {
+    Text(text = message)
+}
+
 @Preview(
     showBackground = true,
     name = "Light Mode",
@@ -139,5 +149,13 @@ private fun MessageCardPreview() {
 private fun ConversationPreview() {
     MyApplicationTheme {
         Conversation(SampleData.conversationSample)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun DemoPreview() {
+    MyApplicationTheme {
+        Demo("demo text")
     }
 }

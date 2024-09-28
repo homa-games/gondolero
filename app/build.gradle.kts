@@ -8,12 +8,15 @@ plugins {
 
 android {
     namespace = "com.example.myapplication"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.example.myapplication"
-        minSdk = 21
-        targetSdk = 34
+
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        buildToolsVersion = libs.versions.buildToolsVersion.get()
+
         versionCode = 1
         versionName = "1.0"
 
@@ -22,7 +25,6 @@ android {
             useSupportLibrary = true
         }
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -37,13 +39,13 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.13"
+        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
     }
     packaging {
         resources {
@@ -58,6 +60,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.material3)
+    implementation(project(":features:demo:impl"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.ui.tooling)

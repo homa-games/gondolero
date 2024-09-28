@@ -1,4 +1,10 @@
 [versions]
+compileSdk = "34"
+minSdk = "21"
+targetSdk = "34"
+buildToolsVersion = "34.0.0"
+kotlinCompilerExtensionVersion = "1.5.13"
+
 agp = "8.6.0"
 kotlin = "1.9.23"
 coreKtx = "1.13.1"
@@ -24,5 +30,6 @@ compose-rules = { group = "io.nlopez.compose.rules", name = "ktlint", version.re
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ktlintGradle = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintGradle" }
