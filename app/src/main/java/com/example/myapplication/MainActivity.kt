@@ -47,8 +47,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    Demo(message = DemoImpl().demo())
-                    Conversation(messages = SampleData.conversationSample)
+                    Column {
+                        Demo(message = DemoImpl().demo())
+                        Conversation(messages = SampleData.conversationSample)
+                    }
                 }
             }
         }
