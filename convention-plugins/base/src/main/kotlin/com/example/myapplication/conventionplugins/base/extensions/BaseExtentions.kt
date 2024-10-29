@@ -1,4 +1,4 @@
-package com.example.myapplication.base.extensions
+package com.example.myapplication.conventionplugins.base.extensions
 
 import com.android.build.gradle.LibraryExtension
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension

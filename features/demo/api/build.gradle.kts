@@ -1,4 +1,4 @@
-import com.example.myapplication.base.extensions.myAndroidLibConfig
+import com.example.myapplication.conventionplugins.base.extensions.myAndroidLibConfig
 
 plugins {
     alias(libs.plugins.androidLibrary)

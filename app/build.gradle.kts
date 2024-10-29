@@ -1,4 +1,4 @@
-import com.example.myapplication.base.extensions.myAndroidAppConfig
+import com.example.myapplication.conventionplugins.base.extensions.myAndroidAppConfig
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {

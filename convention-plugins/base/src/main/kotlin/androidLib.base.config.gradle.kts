@@ -1,6 +1,6 @@
-import com.example.myapplication.base.extensions.myAndroidLibConfig
-import com.example.myapplication.base.extensions.myKotlinOptions
-import com.example.myapplication.base.extensions.verLibs
+import com.example.myapplication.conventionplugins.base.extensions.myAndroidLibConfig
+import com.example.myapplication.conventionplugins.base.extensions.myKotlinOptions
+import com.example.myapplication.conventionplugins.base.extensions.verLibs
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 myAndroidLibConfig {
