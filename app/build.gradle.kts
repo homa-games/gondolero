@@ -2,10 +2,9 @@ import com.example.myapplication.conventionplugins.base.extensions.myAndroidAppC
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
-    alias(libs.plugins.androidApplication)
+    id("myAndroid.application.plugin")
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ktlintGradle)
-    id("androidApp.base.config")
 }
 
 myAndroidAppConfig {
@@ -13,9 +12,6 @@ myAndroidAppConfig {
 
     defaultConfig {
         applicationId = "com.example.myapplication"
-
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

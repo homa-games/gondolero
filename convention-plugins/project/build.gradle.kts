@@ -13,6 +13,7 @@ dependencies {
     // Workaround for version catalog working inside precompiled scripts
     // Issue - https://github.com/gradle/gradle/issues/15383
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
+    implementation(libs.gradleplugin.base)
 }
 private val projectJavaVersion: JavaVersion = JavaVersion.toVersion(libs.versions.java.get())
 
@@ -22,4 +23,13 @@ java {
 }
 tasks.withType<KotlinCompile>().configureEach {
     compilerOptions.jvmTarget.set(JvmTarget.fromTarget(projectJavaVersion.toString()))
+}
+
+gradlePlugin {
+    plugins {
+        register("myAndroid.application.plugin") {
+            id = "myAndroid.application.plugin"
+            implementationClass = "com.example.myapplication.conventionplugins.project.MyAndroidApplicationPlugin"
+        }
+    }
 }

@@ -1,9 +1,8 @@
 pluginManagement {
-    includeBuild("convention-plugins/project")
     repositories {
         google()
-        mavenCentral()
         gradlePluginPortal()
+        mavenCentral()
     }
 }
 dependencyResolutionManagement {
@@ -12,9 +11,13 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+    versionCatalogs {
+        create("libs") {
+            from(files("../../gradle/libs.versions.toml"))
+        }
+    }
 }
 
-rootProject.name = "My Application"
-include(":app")
-include(":features:demo:api")
-include(":features:demo:impl")
+rootProject.name = "project"
+
+includeBuild("../base")
