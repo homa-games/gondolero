@@ -31,5 +31,9 @@ gradlePlugin {
             id = "myAndroid.application.plugin"
             implementationClass = "com.example.myapplication.conventionplugins.project.MyAndroidApplicationPlugin"
         }
+        register("myAndroid.library.plugin") {
+            id = "myAndroid.library.plugin"
+            implementationClass = "com.example.myapplication.conventionplugins.project.MyAndroidLibraryPlugin"
+        }
     }
 }

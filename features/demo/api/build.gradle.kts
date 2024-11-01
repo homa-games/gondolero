@@ -1,10 +1,8 @@
 import com.example.myapplication.conventionplugins.base.extensions.myAndroidLibConfig
 
 plugins {
-    alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("myAndroid.library.plugin")
     alias(libs.plugins.ktlintGradle)
-    id("androidLib.base.config")
 }
 
 myAndroidLibConfig {
