@@ -1,13 +1,11 @@
-import com.example.myapplication.conventionplugins.base.extensions.myAndroidAppConfig
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("myAndroid.application.plugin")
-    alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ktlintGradle)
 }
 
-myAndroidAppConfig {
+android {
     namespace = "com.example.myapplication"
 
     defaultConfig {
