@@ -2,6 +2,7 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("myAndroid.application.plugin")
+    id("myOptions.compiler.plugin")
     alias(libs.plugins.ktlintGradle)
 }
 
