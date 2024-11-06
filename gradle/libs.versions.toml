@@ -37,6 +37,7 @@ compose-rules = { group = "io.nlopez.compose.rules", name = "ktlint", version.re
 
 gradleplugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 gradleplugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+gradlePlugin-ktlint = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlintGradle" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

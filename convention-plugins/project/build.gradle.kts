@@ -14,6 +14,7 @@ dependencies {
     // Issue - https://github.com/gradle/gradle/issues/15383
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
     implementation(libs.gradleplugin.base)
+    implementation(libs.gradlePlugin.ktlint)
 }
 private val projectJavaVersion: JavaVersion = JavaVersion.toVersion(libs.versions.java.get())
 
@@ -38,6 +39,10 @@ gradlePlugin {
         register("myOptions.compiler.plugin") {
             id = "myOptions.compiler.plugin"
             implementationClass = "com.example.myapplication.conventionplugins.project.MyCompileOptionsPlugin"
+        }
+        register("myKtlint.linter.plugin") {
+            id = "myKtlint.linter.plugin"
+            implementationClass = "com.example.myapplication.conventionplugins.project.MyKtlintPlugin"
         }
     }
 }

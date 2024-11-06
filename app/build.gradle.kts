@@ -1,9 +1,6 @@
-import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
-
 plugins {
     id("myAndroid.application.plugin")
     id("myOptions.compiler.plugin")
-    alias(libs.plugins.ktlintGradle)
 }
 
 android {
@@ -50,14 +47,4 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.ui.tooling)
     ktlintRuleset(libs.compose.rules)
-}
-
-ktlint {
-    version = libs.versions.ktlintCli
-    enableExperimentalRules = false
-    ignoreFailures = false
-    reporters {
-        reporter(ReporterType.PLAIN_GROUP_BY_FILE)
-        reporter(ReporterType.HTML)
-    }
 }

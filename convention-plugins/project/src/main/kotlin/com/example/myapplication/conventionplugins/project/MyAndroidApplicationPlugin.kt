@@ -12,6 +12,7 @@ class MyAndroidApplicationPlugin : Plugin<Project> {
                 apply(verLibs.plugins.androidApplication.get().pluginId)
                 apply(verLibs.plugins.jetbrainsKotlinAndroid.get().pluginId)
                 apply("myOptions.compiler.plugin")
+                apply("myKtlint.linter.plugin")
             }
             myAndroidAppConfig {
                 compileSdk = verLibs.versions.compileSdk.get().toInt()
