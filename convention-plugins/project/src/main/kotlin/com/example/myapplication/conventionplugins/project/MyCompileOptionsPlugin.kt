@@ -1,8 +1,8 @@
 package com.example.myapplication.conventionplugins.project
 
-import com.example.myapplication.conventionplugins.base.extensions.myCommonAndroidConfig
-import com.example.myapplication.conventionplugins.base.extensions.myKotlinOptions
-import com.example.myapplication.conventionplugins.base.extensions.verLibs
+import com.example.myapplication.conventionplugins.project.extentions.myCommonAndroidConfig
+import com.example.myapplication.conventionplugins.project.extentions.myKotlinOptions
+import com.example.myapplication.conventionplugins.project.extentions.verLibs
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project

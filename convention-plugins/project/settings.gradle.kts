@@ -20,5 +20,3 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "project"
-
-includeBuild("../base")

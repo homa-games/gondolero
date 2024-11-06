@@ -1,7 +1,7 @@
 package com.example.myapplication.conventionplugins.project
 
-import com.example.myapplication.conventionplugins.base.extensions.myAndroidAppConfig
-import com.example.myapplication.conventionplugins.base.extensions.verLibs
+import com.example.myapplication.conventionplugins.project.extentions.myAndroidAppConfig
+import com.example.myapplication.conventionplugins.project.extentions.verLibs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
