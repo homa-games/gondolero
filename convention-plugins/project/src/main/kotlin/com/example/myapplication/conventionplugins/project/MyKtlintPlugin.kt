@@ -17,6 +17,7 @@ class MyKtlintPlugin : Plugin<Project> {
                 version = verLibs.versions.ktlintCli
                 enableExperimentalRules = false
                 ignoreFailures = false
+                verbose = true
                 reporters {
                     reporter(ReporterType.PLAIN_GROUP_BY_FILE)
                     reporter(ReporterType.HTML)
