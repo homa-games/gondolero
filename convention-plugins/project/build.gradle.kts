@@ -15,15 +15,6 @@ dependencies {
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
     implementation(libs.gradlePlugin.ktlint)
 }
-private val projectJavaVersion: JavaVersion = JavaVersion.toVersion(libs.versions.java.get())
-
-java {
-    sourceCompatibility = projectJavaVersion
-    targetCompatibility = projectJavaVersion
-}
-tasks.withType<KotlinCompile>().configureEach {
-    compilerOptions.jvmTarget.set(JvmTarget.fromTarget(projectJavaVersion.toString()))
-}
 
 gradlePlugin {
     plugins {
