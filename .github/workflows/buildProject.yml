@@ -1,0 +1,48 @@
+name: Build apk
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Build apk
+        run: ./gradlew assembleDebug
+
+      - name: Build aab
+        run: ./gradlew bundleDebug
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: apk
+          path: app/build/outputs/apk/**/*.apk
+
+      - name: Upload aab
+        uses: actions/upload-artifact@v2
+        with:
+          name: aab
+          path: app/build/outputs/bundle/**/*.aab
