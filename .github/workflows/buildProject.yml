@@ -1,4 +1,4 @@
-name: Build apk
+name: Build project
 
 on:
   workflow_dispatch:
@@ -17,10 +17,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
-          java-version: '11'
+          java-version: '21'
 
       - name: Cache Gradle packages
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
@@ -36,13 +36,13 @@ jobs:
         run: ./gradlew bundleDebug
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: apk
           path: app/build/outputs/apk/**/*.apk
 
       - name: Upload aab
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: aab
           path: app/build/outputs/bundle/**/*.aab
