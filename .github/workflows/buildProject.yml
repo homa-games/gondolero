@@ -19,15 +19,21 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Cache Gradle packages
+      - name: Cache Gradle Wrapper
         uses: actions/cache@v4
         with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('/gradle/wrapper/gradle-wrapper.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-
+            ${{ runner.os }}-gradle-wrapper-
+
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('/gradle/wrapper/gradle-wrapper.properties', 'gradle/*.versions.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-caches-
 
       - name: Build apk
         run: ./gradlew assembleDebug
@@ -35,7 +41,7 @@ jobs:
       - name: Build aab
         run: ./gradlew bundleDebug
 
-      - name: Upload artifacts
+      - name: Upload apk
         uses: actions/upload-artifact@v4
         with:
           name: apk
