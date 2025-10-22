@@ -9,6 +9,14 @@ jobs:
     permissions:
       contents: read
 
+    strategy:
+      matrix:
+        include:
+          - artifact: apk
+            path: app/build/outputs/apk/**/*.apk
+          - artifact: aab
+            path: app/build/outputs/bundle/**/*.aab
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -41,14 +49,8 @@ jobs:
       - name: Build aab
         run: ./gradlew bundleDebug
 
-      - name: Upload apk
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: apk
-          path: app/build/outputs/apk/**/*.apk
-
-      - name: Upload aab
-        uses: actions/upload-artifact@v4
-        with:
-          name: aab
-          path: app/build/outputs/bundle/**/*.aab
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.path }}
