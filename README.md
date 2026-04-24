@@ -6,5 +6,9 @@
 ```sh
 ./gradlew ktlintCheck --continue
 ```
+Форматирование
+```sh
+./gradlew ktlintFormat
+```
 
 Линтер автоматически запускается перед каждым push через скрипт [pre-push](.git/hooks/pre-push)
