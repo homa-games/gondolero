@@ -1,5 +1,7 @@
 package com.example.myapplication.conventionplugins.project
 
+import com.example.myapplication.conventionplugins.project.extentions.applyCommonPlugins
+import com.example.myapplication.conventionplugins.project.extentions.configureCommonParameters
 import com.example.myapplication.conventionplugins.project.extentions.myAndroidAppConfig
 import com.example.myapplication.conventionplugins.project.extentions.verLibs
 import org.gradle.api.Plugin
@@ -8,13 +10,10 @@ import org.gradle.api.Project
 class MyAndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            with(pluginManager) {
-                apply(verLibs.plugins.androidApplication.get().pluginId)
-                apply("myOptions.compiler.plugin")
-                apply("myKtlint.linter.plugin")
-            }
+            pluginManager.apply(verLibs.plugins.androidApplication.get().pluginId)
+            applyCommonPlugins()
+            configureCommonParameters()
             myAndroidAppConfig {
-                compileSdk = verLibs.versions.compileSdk.get().toInt()
                 defaultConfig {
                     minSdk = verLibs.versions.minSdk.get().toInt()
                     targetSdk = verLibs.versions.targetSdk.get().toInt()

@@ -39,12 +39,23 @@ fun Project.myAndroidAppConfig(block: ApplicationExtension.() -> Unit) {
     block(appExt)
 }
 
-fun Project.myCommonAndroidConfig(block: CommonExtension.() -> Unit) {
+fun Project.myCommonConfig(block: CommonExtension.() -> Unit) {
     block(commonExt)
 }
 
 fun Project.myKotlinOptions(block: KotlinJvmCompilerOptions.() -> Unit) {
     tasks.withType<KotlinJvmCompile>().configureEach {
         compilerOptions(block)
+    }
+}
+
+fun Project.applyCommonPlugins() {
+    pluginManager.apply("myOptions.compiler.plugin")
+    pluginManager.apply("myKtlint.linter.plugin")
+}
+
+fun Project.configureCommonParameters() {
+    myCommonConfig {
+        compileSdk = verLibs.versions.compileSdk.get().toInt()
     }
 }
