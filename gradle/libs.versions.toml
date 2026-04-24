@@ -2,9 +2,9 @@
 compileSdk = "36"
 minSdk = "21"
 targetSdk = "36"
-buildToolsVersion = "36.0.0"
+buildToolsVersion = "37.0.0"
 
-agp = "8.10.1"
+agp = "9.2.0"
 kotlin = "2.2.0"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -44,4 +44,3 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ktlintGradle = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintGradle" }
-

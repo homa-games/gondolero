@@ -10,7 +10,6 @@ class MyAndroidLibraryPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply(verLibs.plugins.androidLibrary.get().pluginId)
-                apply(verLibs.plugins.jetbrainsKotlinAndroid.get().pluginId)
                 apply("myOptions.compiler.plugin")
                 apply("myKtlint.linter.plugin")
             }
