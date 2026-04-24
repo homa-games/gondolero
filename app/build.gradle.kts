@@ -1,28 +1,20 @@
-import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
-
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.ktlintGradle)
+    id("myAndroid.application.plugin")
+    id("myOptions.compiler.plugin")
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "com.example.myapplication"
-    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.myapplication"
-        minSdk = 21
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -32,18 +24,8 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.13"
     }
     packaging {
         resources {
@@ -58,18 +40,9 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.tooling)
+    implementation(project(":features:demo:impl"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    debugImplementation(libs.androidx.ui.tooling)
     ktlintRuleset(libs.compose.rules)
-}
-
-ktlint {
-    version = libs.versions.ktlintCli
-    enableExperimentalRules = false
-    ignoreFailures = false
-    reporters {
-        reporter(ReporterType.PLAIN_GROUP_BY_FILE)
-        reporter(ReporterType.HTML)
-    }
 }
