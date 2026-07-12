@@ -1,6 +1,5 @@
 plugins {
     id("myAndroid.application.plugin")
-    id("myOptions.compiler.plugin")
     alias(libs.plugins.kotlin.compose)
 }
 
