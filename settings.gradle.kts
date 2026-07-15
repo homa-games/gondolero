@@ -13,6 +13,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+plugins {
+    id("com.android.settings") version "9.2.1"
+}
 
 rootProject.name = "My Application"
 include(":app")
