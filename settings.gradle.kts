@@ -13,7 +13,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
 rootProject.name = "My Application"
 include(":app")
 include(":features:demo:api")
