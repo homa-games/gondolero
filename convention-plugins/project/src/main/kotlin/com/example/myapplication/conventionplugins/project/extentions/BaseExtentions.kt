@@ -7,9 +7,6 @@ import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.findByType
 import org.gradle.kotlin.dsl.getByType
-import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
-import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 private val Project.libExt: LibraryExtension
     get() = extensions.findByType(LibraryExtension::class)
@@ -41,12 +38,6 @@ fun Project.myAndroidAppConfig(block: ApplicationExtension.() -> Unit) {
 
 fun Project.myCommonConfig(block: CommonExtension.() -> Unit) {
     block(commonExt)
-}
-
-fun Project.myKotlinOptions(block: KotlinJvmCompilerOptions.() -> Unit) {
-    tasks.withType<KotlinJvmCompile>().configureEach {
-        compilerOptions(block)
-    }
 }
 
 fun Project.applyCommonPlugins() {
